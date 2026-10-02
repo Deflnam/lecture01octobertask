@@ -21,7 +21,8 @@ size_t send_msg(int& err, int wr, const char* b, size_t k)
     {
         ssize_t n = write(wr, b + total, k - total);
         if (n <= 0)
-        { err = -1;
+        {
+          err = -1;
           return total;
         }
         total += n;

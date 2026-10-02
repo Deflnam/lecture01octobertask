@@ -14,7 +14,6 @@ size_t recv_msg(int& err, int rd, char* b, size_t k)
         {
           err = -1;
           return total;
-        
         }
         total += (size_t)n;
     }
@@ -42,9 +41,9 @@ int main(int argc, char** argv)
     size_t n = recv_msg(err, fd, (char*)(&size), sizeof(size));
     if (err < 0 || n != sizeof(size))
     {
-        std::cerr << "Failed to read size!" << std::endl;
-        close(fd);
-        return 1;
+      std::cerr << "Failed to read size!" << std::endl;
+      close(fd);
+      return 1;
     }
     
     std::vector<char> msg(size + 1);
